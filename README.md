@@ -1,55 +1,46 @@
-KPI Analysis and Dashboarding Using Tableau
+# Delivery KPI Dashboard (Tableau)
 
-A project to perform Key Performance Indicator (KPI) analysis and build dashboards using Tableau to visualize and explore business metrics.
+A Tableau story that tracks two operational KPIs for a parcel-delivery network across ten countries over six
+weeks (weeks 41–46), and checks each country against its budget target.
 
-📂 Repository Contents
-File	Purpose
-KPI data.xlsx	The source data used for analysis / dashboarding.
-Dashboarding.twb	The Tableau workbook file, containing dashboard(s) built on the KPI data.
-🎯 Project Goals
+## KPIs
 
-Define and compute relevant KPIs from raw data in KPI data.xlsx.
+| KPI | Definition | Target |
+|---|---|---|
+| **Outbound performance** | Weekly outbound performance rate, with parcel volume | At or above the country's budget |
+| **Complaints quota** | Complaints per 10,000 parcels | At or below the country's budget |
 
-Use Tableau to build visual dashboards for monitoring KPI trends, spotting issues or opportunities.
+Countries: Costa Rica, Colombia, Morocco, South Africa, Angola, Tunisia, India, Kenya, Japan and Argentina.
 
-Enable non-technical stakeholders to interact with the data via dashboards, making insights accessible.
+## What the analysis covers
 
-🛠 How to Use
+For each KPI, overall and per week:
 
-Prerequisites
+- minimum, maximum and aggregated value per country
+- best and worst week by performance and by volume
+- whether the target was met, and the deviation from target in points and in parcels or complaints
 
-Tableau Desktop (or another version capable of opening .twb files)
+## Dashboard
 
-Access to the data file (KPI data.xlsx)
+The workbook is a Tableau story with four points:
 
-Steps to explore / modify
+1. Outbound KPI: all countries
+2. Outbound KPI: Morocco
+3. Complaints KPI: all countries
+4. Complaints KPI: Morocco
 
-Open KPI data.xlsx to review and understand the data (column fields, format, metrics).
+## Repository contents
 
-Launch Tableau and open Dashboarding.twb.
+```
+├── kpi_dashboard.twb   # Tableau workbook (story + worksheets)
+└── KPI data.xlsx       # Weekly KPI data and the derived metrics
+```
 
-Inspect the dashboards: see which KPIs are included, what filters are available, etc.
+## Opening the workbook
 
-Modify, add, or filter visualizations as needed: you can add new sheets, adjust charts, change formatting, etc.
+Open `kpi_dashboard.twb` in Tableau Desktop or the free Tableau Public app. If Tableau asks for the data source,
+point it to `KPI data.xlsx` in the same folder.
 
-Potential extensions
+## License
 
-Automate data refresh (if data updates regularly).
-
-Publish dashboard to Tableau Server or Tableau Public for sharing.
-
-Add interactivity (filters, drill-downs, tooltips) if not already included.
-
-✅ Possible KPIs & Insights
-
-Some of the kinds of metrics you can (or do) monitor in dashboards like this:
-
-Trends over time (monthly, quarterly, yearly) of key measures (sales, revenues, costs, data quality, etc.)
-
-Comparison between actual vs target values
-
-Breakdown by categories (region, department, product line, etc.)
-
-Identification of anomalies or outliers (e.g., dips, spikes)
-
-Contribution of different components / categories to overall performance
+[MIT](LICENSE)
